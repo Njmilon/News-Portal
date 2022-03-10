@@ -144,9 +144,10 @@ Route::post('/all/ads/create',[AdsController::class,'AdsCreate'])->name('all.ads
 Route::get('/ads/delete/{id}',[AdsController::class,'AdsDelete'])->name('single.ads.delete');
 
 
-//__ads all route__//
+//__user role all route__//
 Route::get('/create/user/role/index',[RoleController::class,'RoleCreateIndex'])->name('create.role.index');
-
+Route::post('/store/user/role',[RoleController::class,'StoreRole'])->name('store.user.role');
+Route::get('/user/role/index',[RoleController::class,'Index'])->name('user.role.index');
 
 
 

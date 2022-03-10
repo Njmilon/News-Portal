@@ -8,21 +8,21 @@
       <div class="card-body">
         <h4 class="card-title">Create User With Role</h4>
 
-        <form action="" method="POST">
+        <form action="{{ route('store.user.role') }}" method="POST">
             @csrf
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" name="name" id="name">
+            <input type="text" class="form-control" name="name" placeholder="Enter Name" id="name">
           </div>
 
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" name="email" id="email">
+            <input type="email" class="form-control" name="email" placeholder="Enter Email" id="email">
           </div>
 
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" name="password" id="password">
+            <input type="password" class="form-control" name="password" placeholder="Enter Password" id="password">
           </div>
           <label for="email"> Select Role:  </label>
 
@@ -31,19 +31,19 @@
             <div class="form-group">   
               <div class="form-check form-check-warning">
                 <label class="form-check-label">
-                  <input name="category" type="checkbox" class="form-check-input"> Category <i class="input-helper"></i></label>
+                  <input value="1" name="category" type="checkbox" class="form-check-input"> Category <i class="input-helper"></i></label>
               </div>
               <div class="form-check form-check-warning">
                 <label class="form-check-label">
-                  <input name="division" type="checkbox" class="form-check-input"> Division <i class="input-helper"></i></label>
+                  <input value="1" name="division" type="checkbox" class="form-check-input"> Division <i class="input-helper"></i></label>
               </div>
               <div class="form-check form-check-warning">
                 <label class="form-check-label">
-                  <input name="post" type="checkbox" class="form-check-input"> Posts <i class="input-helper"></i></label>
+                  <input value="1" name="post" type="checkbox" class="form-check-input"> Posts <i class="input-helper"></i></label>
               </div>
               <div class="form-check form-check-warning">
                 <label class="form-check-label">
-                  <input name="setting" type="checkbox" class="form-check-input"> Setting <i class="input-helper"></i></label>
+                  <input value="1" name="setting" type="checkbox" class="form-check-input"> Setting <i class="input-helper"></i></label>
               </div>
             </div>
           </div>
@@ -52,19 +52,19 @@
             <div class="form-group">
               <div class="form-check form-check-warning">
                 <label class="form-check-label">
-                  <input name="website" type="checkbox" class="form-check-input"> Website <i class="input-helper"></i></label>
+                  <input value="1" name="website" type="checkbox" class="form-check-input"> Website <i class="input-helper"></i></label>
               </div>
               <div class="form-check form-check-warning">
                 <label class="form-check-label">
-                  <input name="gallery" type="checkbox" class="form-check-input"> Gallery <i class="input-helper"></i></label>
+                  <input value="1" name="gallery" type="checkbox" class="form-check-input"> Gallery <i class="input-helper"></i></label>
               </div>
               <div class="form-check form-check-warning">
                 <label class="form-check-label">
-                  <input name="advertisement" type="checkbox" class="form-check-input"> Advertisement <i class="input-helper"></i></label>
+                  <input value="1" name="advertisement" type="checkbox" class="form-check-input"> Advertisement <i class="input-helper"></i></label>
               </div>
               <div class="form-check form-check-warning">
                 <label class="form-check-label">
-                  <input name="role" type="checkbox" class="form-check-input"> Role <i class="input-helper"></i></label>
+                  <input value="1" name="role" type="checkbox" class="form-check-input"> Role <i class="input-helper"></i></label>
               </div>
             </div>
           </div>

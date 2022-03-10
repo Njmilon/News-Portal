@@ -3,7 +3,7 @@
 
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-      <a class="sidebar-brand brand-logo" href="index.html"><img src="{{asset('backend/assets/images/logo.svg')}}" alt="logo" /></a>
+      <a class="sidebar-brand brand-logo" href="{{ route('dashboard') }}"> <img src="{{asset('backend/assets/images/logo.svg')}}" alt="logo" /></a>
       <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="{{ asset('backend/assets/images/logo-mini.svg') }}" alt="logo" /></a>
     </div>
     <ul class="nav">
@@ -68,8 +68,8 @@
         </a>
       </li>
 
-      {{-- All Category Sidebar --}}
-      <li class="nav-item menu-items">
+      @if (Auth()->user()->category==1)
+         <li class="nav-item menu-items">
         <a class="nav-link" data-toggle="collapse" href="#category" aria-expanded="false" aria-controls="category">
           <span class="menu-icon">
             <i class="mdi mdi-laptop"></i>
@@ -84,7 +84,13 @@
           </ul>
         </div>
       </li>
+      @else
+        
+      @endif
+      {{-- All Category Sidebar --}}
 
+     
+      @if (Auth()->user()->division==1)
       {{-- All District Sidebar --}}
       <li class="nav-item menu-items"> 
         <a class="nav-link" data-toggle="collapse" href="#district" aria-expanded="false" aria-controls="district">
@@ -101,7 +107,11 @@
           </ul>
         </div>
       </li>
+      @else
+        
+      @endif
 
+      @if (Auth()->user()->post==1)
        {{-- All News Post Sidebar --}}
        <li class="nav-item menu-items">
         <a class="nav-link" data-toggle="collapse" href="#post" aria-expanded="false" aria-controls="post">
@@ -118,7 +128,11 @@
           </ul>
         </div>
       </li>
+      @else
+        
+      @endif
 
+      @if (Auth()->user()->setting==1)
         {{-- All Setting Sidebar --}}
 
       <li class="nav-item menu-items">
@@ -140,7 +154,11 @@
           
         </div>
       </li>
+      @else
+        
+      @endif
  
+      @if (Auth()->user()->website==1)
       <li class="nav-item menu-items">
         <a class="nav-link" data-toggle="collapse" href="#website" aria-expanded="false" aria-controls="website">
           <span class="menu-icon">
@@ -155,8 +173,11 @@
           </ul>
         </div>
       </li>
+      @else
+        
+      @endif
       
-
+      @if (Auth()->user()->gallery==1)
       <li class="nav-item menu-items">
         <a class="nav-link" data-toggle="collapse" href="#gallery" aria-expanded="false" aria-controls="gallery">
           <span class="menu-icon">
@@ -172,7 +193,11 @@
           </ul>
         </div>
       </li>
+      @else
+        
+      @endif
     
+      @if (Auth()->user()->advertisement==1)
       <li class="nav-item menu-items">
         <a class="nav-link" data-toggle="collapse" href="#ads" aria-expanded="false" aria-controls="ads">
           <span class="menu-icon">
@@ -184,11 +209,14 @@
         <div class="collapse" id="ads">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="{{ route('all.ads.index') }}">All Ads</a></li>
-          </ul>
-          
+          </ul>      
         </div>
       </li>
+      @else
+        
+      @endif
 
+      @if (Auth()->user()->role==1)
         <li class="nav-item menu-items">
          <a class="nav-link" data-toggle="collapse" href="#role" aria-expanded="false" aria-controls="role">
            <span class="menu-icon">
@@ -200,10 +228,13 @@
          <div class="collapse" id="role">
            <ul class="nav flex-column sub-menu">
              <li class="nav-item"> <a class="nav-link" href="{{ route('create.role.index') }}">Add User Role</a></li>
-           </ul>
-           
+             <li class="nav-item"> <a class="nav-link" href="{{ route('user.role.index') }}">All User</a></li>
+            </ul>
          </div>
        </li>
+       @else
+        
+       @endif
 
   </ul>
 
