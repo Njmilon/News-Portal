@@ -70,7 +70,7 @@
                     @endif
                 </td>
                 <td>
-                    <a href=""><button type="button" class="btn btn-primary btn-icon-text">
+                    <a href="{{ route('edit.user.role',$row->id) }}"><button type="button" class="btn btn-primary btn-icon-text">
                         <i class="mdi mdi-file-check btn-icon-append"></i> edit </button>
                     </a> 
 

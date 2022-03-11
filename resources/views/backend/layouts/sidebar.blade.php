@@ -149,7 +149,8 @@
             <li class="nav-item"> <a class="nav-link" href="{{ route('seo.link.edit') }}">Seo Setting</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{ route('prayer.link.edit') }}">Prayer Setting</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{ route('livetv.link.edit') }}">Live Tv Setting</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{ route('notice.link.edit') }}">Notice Setting</a></li> 
+            <li class="nav-item"> <a class="nav-link" href="{{ route('notice.link.edit') }}">Notice Setting</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('website.link.edit') }}">Website Setting</a></li>  
           </ul>
           
         </div>

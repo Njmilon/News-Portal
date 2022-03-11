@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\SocialLinkController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\SubDistrictController;
 use App\Http\Controllers\Backend\WebsiteController;
+use App\Http\Controllers\Backend\WebsiteSettingController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -108,6 +109,13 @@ Route::get('/notice/set/online',[SocialLinkController::class,'NoticeSetOnline'])
 
 
 
+//__website setting all route__//
+Route::get('/website/setting/edit/index',[WebsiteSettingController::class,'WebsiteSettingEditIndex'])->name('website.link.edit');
+Route::post('/website/setting/store',[WebsiteSettingController::class,'WebsiteSettingStore'])->name('website.setting.link.store');
+
+
+
+
 //__Important websites all route__//
 Route::get('/website/index',[WebsiteController::class,'Index'])->name('website.index');
 Route::get('/website/create/index',[WebsiteController::class,'CreateIndex'])->name('website.create.index');
@@ -148,7 +156,8 @@ Route::get('/ads/delete/{id}',[AdsController::class,'AdsDelete'])->name('single.
 Route::get('/create/user/role/index',[RoleController::class,'RoleCreateIndex'])->name('create.role.index');
 Route::post('/store/user/role',[RoleController::class,'StoreRole'])->name('store.user.role');
 Route::get('/user/role/index',[RoleController::class,'Index'])->name('user.role.index');
-
+Route::get('edit/user/role/{id}',[RoleController::class,'EditUser'])->name('edit.user.role');
+Route::post('update/user/role/{id}',[RoleController::class,'UpdateUser'])->name('update.user.role');
 
 
 
