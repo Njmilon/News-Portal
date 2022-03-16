@@ -1,4 +1,7 @@
-
+@php
+  use App\Models\User;
+  $user = User::find(Auth::user()->id);
+@endphp
 
 
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -11,17 +14,17 @@
         <div class="profile-desc">
           <div class="profile-pic">
             <div class="count-indicator">
-              <img class="img-xs rounded-circle " src="{{ asset('backend/assets/images/faces/face15.jpg') }}">
+              <img class="img-xs rounded-circle " src="{{ (!empty($user->image)) ? url('upload/user_images/'.$user->image) : url('upload/no_image.jpg') }}">
               <span class="count bg-success"></span>
             </div>
             <div class="profile-name">
-              <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-              <span>Gold Member</span>
+              <h5 class="mb-0 font-weight-normal">{{ Auth::user()->name }}</h5>
+              <span>{{ Auth::user()->designation }}</span>
             </div>
           </div>
           <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
           <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-            <a href="#" class="dropdown-item preview-item">
+            <a href="{{ route('user.dashboard.index') }}" class="dropdown-item preview-item">
               <div class="preview-thumbnail">
                 <div class="preview-icon bg-dark rounded-circle">
                   <i class="mdi mdi-settings text-primary"></i>
@@ -32,7 +35,7 @@
               </div>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item preview-item">
+            <a href="{{ route('user.change.password') }}" class="dropdown-item preview-item">
               <div class="preview-thumbnail">
                 <div class="preview-icon bg-dark rounded-circle">
                   <i class="mdi mdi-onepassword  text-info"></i>
@@ -49,9 +52,9 @@
                   <i class="mdi mdi-calendar-today text-success"></i>
                 </div>
               </div>
-              <div class="preview-item-content">
+              {{-- <div class="preview-item-content">
                 <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
-              </div>
+              </div> --}}
             </a>
           </div>
         </div>
@@ -236,6 +239,15 @@
        @else
         
        @endif
+
+       {{-- <li class="nav-item menu-items">
+        <a class="nav-link" href="{{ route('user.dashboard.index') }}">
+          <span class="menu-icon">
+            <i class="mdi mdi-account-box-multiple"></i>
+          </span>
+          <span class="menu-title">User Dashboard</span>
+        </a>
+      </li> --}}
 
   </ul>
 

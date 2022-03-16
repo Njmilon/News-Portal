@@ -161,7 +161,15 @@ Route::post('update/user/role/{id}',[RoleController::class,'UpdateUser'])->name(
 
 
 
-                            //__Frontend Route__//
+//__user dashboard all route__//
+Route::get('/user/dashboard/index',[AdminController::class,'DashboardIndex'])->name('user.dashboard.index');
+Route::get('/edit/user/dashboard/{id}',[AdminController::class,'DashboardEdit'])->name('edit.user.dashboard');
+Route::post('/store/user/dashboard/{id}',[AdminController::class,'DashboardStore'])->name('store.user.dashboard');  
+Route::get('/change/password/index',[AdminController::class,'ChangePassword'])->name('user.change.password');
+Route::post('/change/password/store',[AdminController::class,'ChangePasswordStore'])->name('user.change.password.store');
+
+
+//__Frontend Route__//
 
 //for language version
 Route::get('/language/bangla',[HomeController::class,'Bangla'])->name('language.bangla');//for bangla
